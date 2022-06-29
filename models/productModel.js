@@ -6,11 +6,13 @@ const productSchema = new mongoose.Schema({
   image: { type: String, required: true },
   lens: { type: Number, required: true },
   Type: { type: String, required: true },
-  bookedTimeSlots: [{
+  bookedTimeSlots: [
+    {
     from: { type: String, required: true },
     to: { type: String, required: true }
 
-  }],
+  }
+  ],
   rentPerHour: { type: Number, required: true },
 
 

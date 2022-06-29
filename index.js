@@ -9,6 +9,8 @@ const port = process.env.PORT || 2310
 app.use(express.json());
 
 app.use('/api/products',require('./routes/productsRoute'))
+app.use('/api/users',require('./routes/usersRoute'))
+app.use('/api/bookings',require('./routes/bookingsRoute'))
 
 app.get('/', (req, res) => {
   res.send('Hello Express app!')
