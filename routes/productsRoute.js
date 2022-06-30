@@ -22,4 +22,20 @@ return res.status(400).json(error)
   }
 })
 
+router.post("/editproduct",async(req,res)=>{
+  try{
+    const product= await Product.findOne({_id:req.body._id})
+    product.name =req.body.name
+    product.image =req.body.image
+    product.Type =req.body.Type
+    product.rentPerHour =req.body.rentPerHour
+    product.lens =req.body.lens
+    
+      await product.save()
+    res.send('Product details updated successfully')
+  }catch(error){
+return res.status(400).json(error)    
+  }
+})
+
 module.exports = router;
