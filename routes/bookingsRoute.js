@@ -3,7 +3,7 @@ const router = express.Router();
 const Booking = require("../models/bookingModel");
 const Product = require("../models/productModel");
 const { v4: uuidv4 } = require('uuid');
-const stripe = require('stripe')('sk_test_51LCG0gSFmd6Rsl6r4qYWAIZiD1qnPd5kY7Iz0EQamRkRbuG01ZnWSd7ef8H39tksQAvLTnPHiq6FUnGfdiIxiWjX00gyG2Uj9Q')
+const stripe = require('stripe')('sk_test_51IYnC0SIR2AbPxU0EiMx1fTwzbZXLbkaOcbc2cXx49528d9TGkQVjUINJfUDAnQMVaBFfBDP5xtcHCkZG1n1V3E800U7qXFmGf')
 
 
 router.post("/bookproduct", async (req, res) => {
@@ -18,7 +18,7 @@ router.post("/bookproduct", async (req, res) => {
 
     const payment = await stripe.charges.create({
       amount: req.body.totalAmount * 100,
-      currency: 'INR',
+      currency: 'inr',
       customer: customer.id,
       receipt_email: token.email
     }, {
