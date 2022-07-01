@@ -14,9 +14,6 @@ app.use('/api/users',require('./routes/usersRoute'))
 app.use('/api/bookings',require('./routes/bookingsRoute'))
 
 
-const path = require("path");
-
-
 app.get('/', (req, res) => {
   res.send('Hello Express app!')
 });
