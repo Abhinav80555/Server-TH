@@ -1,8 +1,10 @@
 
 const mongoose=require('mongoose')
+require('dotenv').config();
 
 function connectDB(){
-  mongoose.connect('mongodb+srv://shey:shey@cluster0.wxcot1l.mongodb.net/shey',{useUnifiedTopology:true,useNewUrlParser:true})
+    // mongoose.connect('mongodb+srv://:@cluster0.wxcot1l.mongodb.net/shey',
+  mongoose.connect(`mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.wxcot1l.mongodb.net/shey`,{useUnifiedTopology:true,useNewUrlParser:true})
   
 const connection=mongoose.connection
 

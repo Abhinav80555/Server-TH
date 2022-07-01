@@ -1,5 +1,6 @@
 const express = require('express');
 const dbconnection=require('./db')
+require('dotenv').config();
 const cors=require('cors');
 
 
