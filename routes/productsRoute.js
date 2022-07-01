@@ -38,4 +38,16 @@ return res.status(400).json(error)
   }
 })
 
+
+router.post("/deleteproduct",async(req,res)=>{
+  try{
+    
+      await Product.findOneAndDelete({_id:req.body.productId})
+    res.send('Product deleted successfully')
+  }catch(error){
+return res.status(400).json(error)    
+  }
+})
+
+      
 module.exports = router;
